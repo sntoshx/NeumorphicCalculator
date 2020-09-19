@@ -1,0 +1,209 @@
+@keyframes lightup {
+  0% {
+    filter: saturate(90%);
+  }
+  50% {
+    filter: saturate(650%);
+  }
+  100% {
+    filter: saturate(140%);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --bg: rgb(90, 90, 90);
+}
+body {
+  background: var(--bg);
+}
+
+.main-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.calc {
+  background: rgb(232, 232, 232);
+  height: clamp(320px, 35vw, 80vh);
+  width: clamp(350px, 38vw, 40vw);
+  border-radius: 3vw;
+  padding: 1.85rem;
+  border: 1px solid rgb(0, 0, 0, 0);
+  outline: none;
+  box-shadow: 1.252vw 1.252vw 2vw rgb(0, 0, 0, 0.56);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.operands {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 12vw;
+  justify-content: space-between;
+}
+
+.ans {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.box {
+  outline: none;
+  background: none;
+  box-shadow: inset -2px -3px 5px rgb(0, 0, 0, 0.3), -4px -6px 5px white;
+  border: none;
+  padding: 10px 30px;
+  font-size: 3vw;
+  font-family: arial;
+  font-weight: 800;
+  border-radius: 50vw;
+  margin: 0.8vw 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"]:focus {
+  box-shadow: inset 3px 2px 4px rgb(0, 0, 0, 0.3), 3px 2px 4px white;
+}
+
+#res {
+  pointer-events: none;
+  /* text-shadow: 0 0 5px rgb(0, 124, 0); */
+  color: green;
+  font-weight: 1000;
+  box-shadow: inset 3px 2px 4px rgb(0, 0, 0, 0.3), 3px 2px 4px white;
+}
+
+.operators {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5vw 0;
+}
+
+.operator {
+  font-size: 4.5vw;
+  font-family: sans-serif;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  width: 5.7vw;
+  height: 5.7vw;
+  background: radial-gradient(rgb(33, 90, 128), rgb(36, 36, 36));
+  color: white;
+  cursor: pointer;
+}
+
+.operator:active {
+  background: radial-gradient(rgb(12, 155, 250), rgb(0, 71, 79));
+  transition: 0.5s background ease-in-out;
+}
+
+#clear:active {
+  background: radial-gradient(rgb(255, 0, 0), rgb(221, 2, 2));
+}
+
+#plus {
+  animation: lightup 0.6s both ease-in-out 1;
+  animation-delay: 1s;
+}
+#minus {
+  animation: lightup 0.6s both ease-in-out 1;
+  animation-delay: 1.2s;
+  font-family: sans-serif;
+}
+#multiply {
+  animation: lightup 0.6s both ease-in-out 1;
+  animation-delay: 1.6s;
+}
+#divide {
+  animation: lightup 0.6s both ease-in-out 1;
+  animation-delay: 2s;
+}
+
+#clear {
+  margin-left: 33px;
+  background: radial-gradient(rgb(155, 40, 40), rgb(107, 33, 33));
+  animation: lightup 0.6s both ease-in-out 1;
+  animation-delay: 2.4s;
+}
+@media screen and (max-width: 500px) {
+  .calc {
+    height: clamp(300px, 60vh, 800px);
+    width: clamp(270px, 85vw, 90vw);
+    border-radius: 3vw;
+    padding: 1.1975rem;
+  }
+
+  .operands {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-between;
+  }
+
+  .ans {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .box {
+    outline: none;
+    background: none;
+    box-shadow: inset -2px -3px 5px rgb(0, 0, 0, 0.3), -4px -6px 5px white;
+    border: none;
+    padding: 10px 30px;
+    font-size: 35px;
+    font-weight: 1000;
+    border-radius: 50vw;
+    margin: 12px 0;
+  }
+
+  input[type="number"]:focus {
+    box-shadow: inset 3px 2px 4px rgb(0, 0, 0, 0.3), 3px 2px 4px white;
+  }
+
+  .operators {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5px;
+  }
+
+  .operator {
+    font-size: 35px;
+    font-weight: 500;
+    width: 50px;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background: radial-gradient(rgb(33, 90, 128), rgb(36, 36, 36));
+    color: white;
+    cursor: pointer;
+  }
+
+  #minus,
+  #clear {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+  }
+}

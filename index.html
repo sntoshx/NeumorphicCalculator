@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Neumorphic Calculator</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="calc">
+        <div class="operands">
+          <input type="number" name="operand1" id="op1" class="box" />
+          <input type="number" name="operand2" id="op2" class="box" />
+        </div>
+        <div class="operators">
+          <button id="plus" class="operator" onclick="add()">+</button>
+          <button id="minus" class="operator" onclick="minus()">–</button>
+          <button id="multiply" class="operator" onclick="multiply()">×</button>
+          <button id="divide" class="operator" onclick="divide()">÷</button>
+          <button id="clear" class="operator" onclick="clearit()">C</button>
+        </div>
+        <div class="ans">
+          <input type="text" name="result   " id="res" class="box" />
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
