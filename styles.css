@@ -93,7 +93,7 @@ input[type="number"]:focus {
 .operators {
   display: flex;
   justify-content: space-between;
-  margin: 0.5vw 0;
+  margin: 2.6vw 0 0.5vw 0;
 }
 
 .operator {
