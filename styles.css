@@ -147,7 +147,7 @@ input[type="number"]:focus {
   .calc {
     height: clamp(300px, 60vh, 800px);
     width: clamp(270px, 85vw, 90vw);
-    border-radius: 3vw;
+    border-radius: 4vw;
     padding: 1.1975rem;
   }
 
